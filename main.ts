@@ -1,16 +1,20 @@
+import { Player } from "./player";
+
 export class Game {
         width: number;
         height: number;
+        player: Player;
         
         constructor(width: number, height: number){
             this.width = width;
             this.height = height;
+            this.player = new Player(this);
         }
         update():void{
 
         }
-        draw():void{
-
+        draw(context: CanvasRenderingContext2D):void{
+            this.player.draw(context);
         }
     }
 
@@ -20,4 +24,5 @@ window.addEventListener('load', function(){
     canvas.width = 500;
     canvas.height = 500;
 
+    const game: Game = new Game(canvas.width, canvas.height);
 });
