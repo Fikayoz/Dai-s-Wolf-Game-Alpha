@@ -1,4 +1,4 @@
-import { Game } from "./main";
+import { Game } from "./main.js";
 
 export class Player {
     game: Game;

@@ -1,4 +1,4 @@
-import { Player } from "./player";
+import { Player } from "./player.js";
 
 export class Game {
         width: number;
@@ -24,5 +24,6 @@ window.addEventListener('load', function(){
     canvas.width = 500;
     canvas.height = 500;
 
-    const game: Game = new Game(canvas.width, canvas.height);
+    const game: Game = new Game(canvas.width, canvas.height);(game)
+    console.log(game);
 });
