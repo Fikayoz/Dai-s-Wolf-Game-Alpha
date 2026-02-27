@@ -1,3 +1,4 @@
+//Class for handling player inputs
 export class InputHandler {
     keys: string[];
 

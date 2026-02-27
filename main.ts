@@ -13,9 +13,13 @@ export class Game {
             this.player = new Player(this);
             this.input = new InputHandler();
         }
+
+        //Update function to update the screen each frame
         update():void{
-            this.player.update();
+            this.player.update(this.input.keys);
         }
+
+        //Creates the canvas
         draw(context: CanvasRenderingContext2D):void{
             this.player.draw(context);
         }
