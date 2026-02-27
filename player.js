@@ -7,7 +7,8 @@ export class Player {
     image;
     speed;
     maxSpeed;
-    vy;
+    vy; //Vertical velocity
+    weight; //Force of gravity on the player
     constructor(game) {
         this.game = game;
         this.width = 100;
@@ -18,6 +19,7 @@ export class Player {
         this.speed = 0;
         this.maxSpeed = 10;
         this.vy = 0;
+        this.weight = 1;
     }
     update(input) {
         this.x += this.speed;
@@ -34,12 +36,26 @@ export class Player {
         if (this.x < 0) {
             this.x = 0;
         }
-        if (this.x > this.game.width - this.width)
+        if (this.x > this.game.width - this.width) {
             this.x = this.game.width - this.width;
+        }
+        if (this.y < 0) {
+            this.y = 0;
+        }
+        if (this.y > this.game.height - this.height) {
+            this.y = this.game.height - this.height;
+        }
         //Handling Vertical movement
         this.y += this.vy;
         if (input.includes('ArrowUp') && this.onGround()) {
-            this.vy -= 10;
+            this.vy -= 20;
+        }
+        this.y += this.vy;
+        if (!this.onGround()) {
+            this.vy += this.weight;
+        }
+        else {
+            this.vy = 0;
         }
     }
     draw(context) {
