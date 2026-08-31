@@ -1,5 +1,15 @@
 import { Game } from "./main.js";
 
+//Game: Game object from main.ts
+//width: Canvas width 
+//height: Canvas height 
+//x: player model x position 
+//y: player model y position
+//image: The image representing the player (the lil wolf guy). Sprites come from this
+//speed: Player speed
+//maxSpeed: max allowed player speed
+//vy: vertical speed of the player
+//weight: force of gravity (player downward acceleration)
 export class Player {
     game: Game;
     width: number
@@ -9,8 +19,8 @@ export class Player {
     image: HTMLCanvasElement
     speed: number;
     maxSpeed: number;
-    vy: number;  //Vertical velocity
-    weight: number;  //Force of gravity on the player
+    vy: number;
+    weight: number;
 
     constructor(game: Game){
         this.game = game;

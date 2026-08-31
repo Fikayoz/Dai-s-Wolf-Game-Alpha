@@ -1,10 +1,14 @@
 import { Player } from "./player.js";
 import { InputHandler } from "./input.js";
 
+//Player: Player object from main.ts
+//width: Canvas width 
+//height: Canvas height 
+//input: InputHandler object from input.ts (handles player inputs) 
 export class Game {
+        player: Player;
         width: number;
         height: number;
-        player: Player;
         input: InputHandler;
         
         constructor(width: number, height: number){
